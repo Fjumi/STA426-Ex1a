@@ -1,0 +1,44 @@
+---
+title: "Ex01 STA426"
+author: "Anouk Petitpierre"
+date: "9/28/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+First, I create a data set called dd which samples 100 values from a normal distribution with mu = 1 and sigma = 0.25.
+
+```{r}
+rm(list=ls())
+set.seed(1)
+dd<-rnorm(100,mean=1,sd=0.25)
+```
+
+
+Next, I plot a histogram of this data:
+
+```{r}
+set.seed(1)
+dd<-rnorm(100,mean=1,sd=0.25)
+hist(dd)
+print(paste('mean of dd =',mean(dd),'variance of dd =',var(dd)))
+```
+
+The mean of the distribution ist 1.03 and its variance is 0.05.
+
+
+Next, I do the same for the distribution on the log-scale:
+
+```{r}
+set.seed(1)
+dd<-rnorm(100,mean=1,sd=0.25)
+hist(log(dd))
+print(paste('mean =',mean(log(dd)),'variance =',var(log(dd))))
+```
+
+
+The mean of the log-transformed data is 0.00093 and its variance is 0.056.
